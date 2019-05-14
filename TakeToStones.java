@@ -1,9 +1,8 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class TakeToStones {
+public class TakeTwoStones {
 
-    //static int numberOfStones = randomNumber();
     public static int numberOfStones;
 
     public static int[] buildPlayfield() {
@@ -20,7 +19,6 @@ public class TakeToStones {
         return stoneNumber;
     }
 
-    //Vill ha ett udda antal stenar för att vinna
     public static int[] alice(int[] stones) {
         int stonesLeft = numberOfStonesLeft(stones);
 
@@ -42,7 +40,6 @@ public class TakeToStones {
         return stones;
     }
 
-    //Vill ha ett jämnt antal stenar för att vinna
     public static int[] bob(int[] stones) {
 
         int stonesLeft = numberOfStonesLeft(stones);
@@ -106,9 +103,6 @@ public class TakeToStones {
 
             int[] playfield = buildPlayfield();
 
-            //String s = Arrays.toString(playfield);
-            //System.out.println(s);
-
             while (endOfGame(playfield) == false) {
                 playfield = alice(playfield);
                 if (endOfGame(playfield) == false) {
@@ -124,22 +118,3 @@ public class TakeToStones {
         }
     }
 }
-
-/*
-import java.util.Scanner;
-
-public class TakeTwoStones {
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        int i = s.nextInt();
-        if (i >= 1 && i <= 10000000) {
-            i = i % 2;
-            if (i == 0) {
-                System.out.print("Bob");
-            } else {
-                System.out.print("Alice");
-            }
-        }
-    }
-}
-*/
